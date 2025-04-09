@@ -1,6 +1,7 @@
 function altura_cigonyal(angle, radi){
     //cos(angle) * radi
-    if(angle % 360 == 90 || angle % 360 == 270){
+    angle = angle % 360;
+    if(angle == 90 || angle == 270){
         return 0;
     }
     return Math.cos(degrees_to_radians(angle)) * radi;
@@ -8,7 +9,8 @@ function altura_cigonyal(angle, radi){
 
 function amplada_cigonyal(angle, radi){
     //sin(angle) * radi
-    if(angle % 360 == 0 || angle % 360 == 180){
+    angle = angle % 360;
+    if(angle == 0 || angle == 180){
         return 0;
     }
     return Math.sin(degrees_to_radians(angle)) * radi;
