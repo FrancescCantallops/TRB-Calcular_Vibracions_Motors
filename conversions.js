@@ -9,18 +9,20 @@ function rps_to_degreesXsecond(rps){
 }
 
 function rpm_to_degreesXsecond(rpm){
-    return rps_to_degreesXsecond(rpm_to_rps(rpm));
+    return rpm * 6;
 }
 
+/*
 console.log("Revolutions per minute: " + rpm);
 console.log("RPS: " + rpm_to_rps(rpm));
 console.log("Degrees X second: " + rpm_to_degreesXsecond(rpm));
+*/
 
 function to_Kg(value, unit){
-    if(unit == "Kg"){
+    if(unit == "Kg" || unit == "kg"){
         return value;
     }
-    else if(unit == "ton"){
+    else if(unit == "ton" || unit == "t"){
         return value * 1000;
     }
     else if(unit == "g"){
@@ -44,4 +46,8 @@ function to_meters(value, unit){
     else{
         console.log("Invalid length unit");
     }
+}
+
+function periode(Hz){
+    return 1 / Hz;
 }
