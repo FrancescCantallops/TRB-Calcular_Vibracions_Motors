@@ -30,7 +30,21 @@ function degrees_to_radians(degrees){
     return degrees * Math.PI/180;
 }
 
-radi = 10;
-for(let angle=0; angle <= 360; angle += 15){
-    console.log(amplada_cigonyal(angle, radi));
+function prova_grafic(){
+    let radi = 1;
+    let longitut = 2;
+
+    // Generate values
+    const xValues = [];
+    const yValues = [];
+    for (let angle = 0; angle < 720; angle += 5) {
+      xValues.push(angle);
+      yValues.push(altura_pisto(angle, longitut, radi));
+    }
+    
+    // Display using Plotly
+    const data = [{x:xValues, y:yValues, mode:"lines"}];
+    const layout = {title: "altura cigonyal"};
+    Plotly.newPlot("tester", data, layout);   
 }
+
