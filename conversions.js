@@ -1,5 +1,3 @@
-let rpm = 9000;
-
 function rpm_to_rps(rpm){
     return rpm / 60;
 }
@@ -50,4 +48,9 @@ function to_meters(value, unit){
 
 function periode(Hz){
     return 1 / Hz;
+}
+
+
+export function degrees_to_radians(degrees){
+    return degrees * Math.PI/180;
 }
