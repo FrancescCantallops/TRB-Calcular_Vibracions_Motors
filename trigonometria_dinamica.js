@@ -30,14 +30,14 @@ export function posicio_cigonyal_y(angle, radi){
     return cos(angle) * radi;
 }
 
-export function posicio_biela_y(angle, longitut, radi){
+export function tamany_biela_y(angle, longitut, radi){
     //sqrt(longitut² - amplada²)
     return Math.sqrt((longitut**2) - (posicio_cigonyal_x(angle, radi)**2));
 }
 
 export function posicio_pisto_y(angle, longitut, radi){
     //altura_biela + altura_cigonyal
-    return posicio_biela_y(angle, longitut, radi) + posicio_cigonyal_y(angle, radi);
+    return tamany_biela_y(angle, longitut, radi) + posicio_cigonyal_y(angle, radi);
 }
 
 
@@ -52,7 +52,7 @@ export function velocitat_cigonyal_y(angle, radi){
     return -(sin(angle) * radi);
 }
 
-export function velocitat_biela_y(angle, longitut, radi){
+export function velocitat_tamany_biela_y(angle, longitut, radi){
     //- (Cx(angle) * Cx'(angle)) / sqrt(l² - Cx(angle)²)
     let numerador = posicio_cigonyal_x(angle, radi) + velocitat_cigonyal_x(angle, radi);
     let denominador = sqrt((l**2) - (posicio_cigonyal_x(angle, radi)**2));
@@ -62,7 +62,7 @@ export function velocitat_biela_y(angle, longitut, radi){
 
 export function velocitat_pisto_y(angle, longitut, radi){
     //Cy' + By'
-    return velocitat_cigonyal_y(angle, radi) + velocitat_biela_y(angle, longitut, radi);
+    return velocitat_cigonyal_y(angle, radi) + velocitat_tamany_biela_y(angle, longitut, radi);
 }
 
 
@@ -78,7 +78,7 @@ export function acceleracio_cigonyal_y(angle, radi){
 }
 
 
-export function acceleracio_biela_y(angle, longitut, radi){
+export function acceleracio_tamany_biela_y(angle, longitut, radi){
     //
     return 
 }
